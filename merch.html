@@ -18,7 +18,7 @@
             </a>
             <div class="nav-links" id="primary-menu">
         <div class="nav-link-box">
-            <a href="/me">Me</a>
+            <a href="/me">Me & Blog</a>
         </div>
         <div class="nav-link-box">
             <a href="/music">Music</a>
@@ -65,8 +65,8 @@
                 <button type="button" class="color-toggle" data-color="black">Black</button>
             </div>
             <div class="modal-images">
-                <img id="frontImage" src="assets/shirt_white_front.png" alt="White shirt front">
-                <img id="backImage" src="assets/shirt_white_back.png" alt="White shirt back">
+                <img id="frontImage" src="assets/shirt_white_front.png" alt="White shirt front" role="button" tabindex="0" aria-label="Click to zoom front shirt image">
+                <img id="backImage" src="assets/shirt_white_back.png" alt="White shirt back" role="button" tabindex="0" aria-label="Click to zoom back shirt image">
             </div>
             <p class="buy-button" href="" target="_blank" rel="noopener noreferrer">SOON!</p>
             <p class="modal-caption">100% heavyweight cotton (220 g/m²). Includes a custom burned CD-R full of teasbogre stuff and exclusive beats  .</p>
@@ -74,9 +74,20 @@
         </div>
     </div>
 
+    <div class="photo-overlay" id="photoPreview" aria-hidden="true">
+        <div class="photo-panel" role="dialog" aria-modal="true" aria-labelledby="photoPreviewTitle">
+            <button class="photo-close" aria-label="Close image preview">×</button>
+            <img id="previewImage" src="" alt="">
+            <p id="photoPreviewTitle" class="photo-caption">Click outside or press Esc to close</p>
+        </div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById('productModal');
+            const photoOverlay = document.getElementById('photoPreview');
+            const previewImage = document.getElementById('previewImage');
+            const photoClose = document.querySelector('.photo-close');
             const productCard = document.querySelector('.product-card');
             const closeBtn = document.querySelector('.modal-close');
             const toggles = document.querySelectorAll('.color-toggle');
@@ -124,6 +135,41 @@
             modal.addEventListener('click', (event) => {
                 if (event.target === modal) {
                     closeModal();
+                }
+            });
+
+            const openPreview = (image) => {
+                previewImage.src = image.src;
+                previewImage.alt = image.alt;
+                photoOverlay.classList.add('open');
+                photoOverlay.setAttribute('aria-hidden', 'false');
+            };
+
+            const closePreview = () => {
+                photoOverlay.classList.remove('open');
+                photoOverlay.setAttribute('aria-hidden', 'true');
+            };
+
+            [frontImage, backImage].forEach((image) => {
+                image.addEventListener('click', () => openPreview(image));
+                image.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openPreview(image);
+                    }
+                });
+            });
+
+            photoClose.addEventListener('click', closePreview);
+            photoOverlay.addEventListener('click', (event) => {
+                if (event.target === photoOverlay) {
+                    closePreview();
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && photoOverlay.classList.contains('open')) {
+                    closePreview();
                 }
             });
 
