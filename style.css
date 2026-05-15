@@ -212,13 +212,27 @@ h1 {
 @media (max-width: 768px) {
     .nav-bar {
         flex-direction: column;
+        display: flex;
+        flex-direction: row; /* Visszaállítjuk sorba */
+        flex-wrap: wrap;     /* Engedjük, hogy a lenyíló elemek új sorba kerüljenek */
         align-items: center;
         gap: 12px;
         padding: 12px;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+    .nav-center {
+        order: 1; /* A gomb és a ház sorrendjének finomhangolása */
     }
     .nav-link-box,
     .home-circle {
         box-shadow: none;
+        width: 60px;  /* Kicsit kisebb, hogy elférjen */
+        height: 60px;
+    }
+    .menu-toggle {
+        display: flex;
+        order: 2;
     }
     .nav-link-box {
         width: 100%;
@@ -251,5 +265,5 @@ h1 {
     }
     p {
         font-size: 1px;
-    }
+}
 }
