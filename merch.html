@@ -13,31 +13,129 @@
             <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation menu">
                 <span></span>
             </button>
-            <a class="home-button" href="index.html" aria-label="Home">
+            <a class="home-button" href="/" aria-label="Home">
                 <img src="assets/house.png" alt="Home">
             </a>
             <div class="nav-links" id="primary-menu">
-                <div class="nav-link-box">
-                    <a href="me.html">Me</a>
-                </div>
-                <div class="nav-link-box">
-                    <a href="music.html">Music</a>
-                </div>
-                <div class="nav-link-box">
-                    <a href="https://teasbogre.bigcartel.com" target="_blank" rel="noopener noreferrer">Merch</a>
-                </div>
-                <div class="nav-link-box">
-                    <a href="contact.html">Contact</a>
-                </div>
-            </div>
+        <div class="nav-link-box">
+            <a href="/me">Me</a>
+        </div>
+        <div class="nav-link-box">
+            <a href="/music">Music</a>
+        </div>
+        <div class="nav-link-box">
+            <a href="/merch">Merch</a>
+        </div>
+        <div class="nav-link-box">
+            <a href="/contact">Contact</a>
+        </div>
+    </div>
         </nav>
     </header>
     <main>
-        <div class="page-content">
-            <h2>merch</h2>
-            <p>mit keresel?????? :rage: :anrgy:</p>
+        <div class="page-content merch-page">
+            <h1>TEASBOGRE_v1</h1>
+            <p class="intro">FIRST -- ORIGINAL -- EPIC</p>
+            <p class="intro">uhm yeeah.. teasbogre merch !!! enjoy ^_^</p>
+            <div class="product-card" role="button" tabindex="0" aria-label="Open TEASBOGRE v1 product modal">
+                <div class="card-preview">
+                    <img src="assets/shirt_white_front.png" alt="White shirt front preview">
+                    <div class="card-copy">
+                        <h2 class="tag">TEASBOGRE_v1</h2>
+                        <p>click to inspect the shirt !!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-copy">
+                <p>100% heavyweight cotton (220 g/m²). Includes a custom burned CD-R full of teasbogre stuff and exclusive beats. (not cheap LOL)</p>
+                <p class="modal-caption"> PRICE: 15.000 HUF // around 42 EUR // around 49 USD</p>
+            </div>
         </div>
     </main>
+
+    <div class="modal-overlay" id="productModal" aria-hidden="true">
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="productTitle">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 id="productTitle">TEASBOGRE_v1</h2>
+                <p>White version loaded by default.</p>
+            </div>
+            <div class="modal-toggle-group">
+                <button type="button" class="color-toggle active" data-color="white">White</button>
+                <button type="button" class="color-toggle" data-color="black">Black</button>
+            </div>
+            <div class="modal-images">
+                <img id="frontImage" src="assets/shirt_white_front.png" alt="White shirt front">
+                <img id="backImage" src="assets/shirt_white_back.png" alt="White shirt back">
+            </div>
+            <p class="buy-button" href="" target="_blank" rel="noopener noreferrer">SOON!</p>
+            <p class="modal-caption">100% heavyweight cotton (220 g/m²). Includes a custom burned CD-R full of teasbogre stuff and exclusive beats  .</p>
+            <p class="modal-caption"> PRICE: 15.000 HUF // around 42 EUR // around 49 USD</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('productModal');
+            const productCard = document.querySelector('.product-card');
+            const closeBtn = document.querySelector('.modal-close');
+            const toggles = document.querySelectorAll('.color-toggle');
+            const frontImage = document.getElementById('frontImage');
+            const backImage = document.getElementById('backImage');
+
+            const imageSources = {
+                white: {
+                    front: 'assets/shirt_white_front.png',
+                    back: 'assets/shirt_white_back.png',
+                },
+                black: {
+                    front: 'assets/shirt_black_front.png',
+                    back: 'assets/shirt_black_back.png',
+                },
+            };
+
+            const setColor = (color) => {
+                frontImage.src = imageSources[color].front;
+                backImage.src = imageSources[color].back;
+                toggles.forEach((button) => {
+                    button.classList.toggle('active', button.dataset.color === color);
+                });
+            };
+
+            const openModal = () => {
+                modal.classList.add('open');
+                modal.setAttribute('aria-hidden', 'false');
+            };
+
+            const closeModal = () => {
+                modal.classList.remove('open');
+                modal.setAttribute('aria-hidden', 'true');
+            };
+
+            productCard.addEventListener('click', openModal);
+            productCard.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openModal();
+                }
+            });
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            toggles.forEach((button) => {
+                button.addEventListener('click', () => {
+                    setColor(button.dataset.color);
+                });
+            });
+
+            setColor('white');
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
