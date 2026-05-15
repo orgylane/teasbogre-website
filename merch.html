@@ -10,25 +10,25 @@
 <body>
     <header>
         <nav class="nav-bar" aria-label="Primary navigation">
-            <div class="nav-link-box">
-                <a href="me.html">Me</a>
-            </div>
-            <div class="nav-link-box">
-                <a href="music.html">Music</a>
-            </div>
-            <div class="nav-center">
-                <a class="home-circle" href="index.html" aria-label="Home">
-                    <span class="house" aria-hidden="true">
-                        <span class="roof"></span>
-                        <span class="body"></span>
-                    </span>
-                </a>
-            </div>
-            <div class="nav-link-box">
-                <a href="merch.html">Merch</a>
-            </div>
-            <div class="nav-link-box">
-                <a href="contact.html">Contact</a>
+            <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation menu">
+                <span></span>
+            </button>
+            <a class="home-button" href="index.html" aria-label="Home">
+                <img src="assets/house.png" alt="Home">
+            </a>
+            <div class="nav-links" id="primary-menu">
+                <div class="nav-link-box">
+                    <a href="me.html">Me</a>
+                </div>
+                <div class="nav-link-box">
+                    <a href="music.html">Music</a>
+                </div>
+                <div class="nav-link-box">
+                    <a href="https://teasbogre.bigcartel.com" target="_blank" rel="noopener noreferrer">Merch</a>
+                </div>
+                <div class="nav-link-box">
+                    <a href="contact.html">Contact</a>
+                </div>
             </div>
         </nav>
     </header>
