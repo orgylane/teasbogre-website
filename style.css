@@ -639,3 +639,71 @@ p {
         margin-left: auto;
     }
 }
+
+/* ==========================================================================
+   TEASBOGRE_V6 - AGGRESSIVE GOTHIC DARK RED STYLE 
+   ========================================================================== */
+
+/* A fő kártya sötét gótikus stílusa */
+.product-card.v6-gothic {
+    background: rgba(6, 6, 6, 0.95) !important;
+    border: 3px solid #8b0000 !important;
+    box-shadow: 0 0 0 3px #000, 
+                0 0 20px rgba(139, 0, 0, 0.6), 
+                10px 10px 0 #000 !important;
+}
+
+.product-card.v6-gothic:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 0 0 3px #000, 
+                0 0 30px rgba(255, 0, 0, 0.85), 
+                12px 12px 0 #000 !important;
+}
+
+.product-card.v6-gothic .tag {
+    color: #ff3333 !important;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+}
+
+.product-card.v6-gothic h2 {
+    text-shadow: 0 0 10px #8b0000 !important;
+}
+
+/* A V6-os felugró ablak (Modal) belső áthangolása sötétvörösre */
+#modal-v6 .modal-panel {
+    background: rgba(8, 2, 2, 0.99) !important;
+    border: 2px solid #8b0000 !important;
+    box-shadow: 0 0 0 1px #000, 0 0 25px rgba(139, 0, 0, 0.4);
+}
+
+#modal-v6 .modal-header h2 {
+    text-shadow: 0 0 12px #ff0000 !important;
+}
+
+#modal-v6 .color-toggle {
+    border: 2px solid #8b0000;
+    color: #ffcccc;
+}
+
+#modal-v6 .color-toggle.active,
+#modal-v6 .color-toggle:hover {
+    background: #8b0000;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+#modal-v6 .modal-images img {
+    border: 3px solid rgba(139, 0, 0, 0.7);
+}
+
+#modal-v6 .modal-images img:hover {
+    border-color: #ff3333;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+#modal-v6 .buy-button {
+    background: #8b0000;
+    color: #fff;
+    border: 4px solid #000;
+    box-shadow: 6px 6px 0 #000;
+}
