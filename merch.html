@@ -17,27 +17,29 @@
                 <img src="assets/house.png" alt="Home">
             </a>
             <div class="nav-links" id="primary-menu">
-        <div class="nav-link-box">
-            <a href="/me">Me & Blog</a>
-        </div>
-        <div class="nav-link-box">
-            <a href="/music">Music</a>
-        </div>
-        <div class="nav-link-box">
-            <a href="/merch">Merch</a>
-        </div>
-        <div class="nav-link-box">
-            <a href="/contact">Contact</a>
-        </div>
-    </div>
+                <div class="nav-link-box">
+                    <a href="/me">Me & Blog</a>
+                </div>
+                <div class="nav-link-box">
+                    <a href="/music">Music</a>
+                </div>
+                <div class="nav-link-box">
+                    <a href="/merch">Merch</a>
+                </div>
+                <div class="nav-link-box">
+                    <a href="/contact">Contact</a>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
         <div class="page-content merch-page">
-            <h1>TEASBOGRE_v1</h1>
-            <p class="intro">FIRST -- ORIGINAL -- EPIC</p>
+            <h1>TEASBOGRE MERCH</h1>
+            <p class="intro">FIRST -- ORIGINAL -- EPIC -- GOTHIC</p>
             <p class="intro">uhm yeeah.. teasbogre merch !!! enjoy ^_^</p>
-            <div class="product-card" role="button" tabindex="0" aria-label="Open TEASBOGRE v1 product modal">
+            
+            <!-- PRODUCT V1 -->
+            <div class="product-card" id="card-v1" role="button" tabindex="0" aria-label="Open TEASBOGRE v1 product modal">
                 <div class="card-preview">
                     <img src="assets/shirt_white_front.png" alt="White shirt front preview">
                     <div class="card-copy">
@@ -50,14 +52,69 @@
                 <p>100% heavyweight cotton (220 g/m²). Includes a custom burned CD-R full of teasbogre stuff and exclusive beats. (not cheap LOL)</p>
                 <p class="modal-caption"> PRICE: 15.000 HUF // around 42 EUR // around 49 USD</p>
             </div>
+
+            <br><hr style="border: 1px solid rgba(255,255,255,0.1); margin: 30px 0;"><br>
+
+            <!-- PRODUCT V6 -->
+            <div class="product-card v6-gothic" id="card-v6" role="button" tabindex="0" aria-label="Open TEASBOGRE v6 product modal">
+                <div class="card-preview">
+                    <img src="assets/v6_white_front.png" alt="White shirt front preview">
+                    <div class="card-copy">
+                        <h2 class="tag">TEASBOGRE_v6</h2>
+                        <p>click to inspect the shirt !!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-copy">
+                <p>100% heavyweight cotton (220 g/m²). Includes a custom burned CD-R full of teasbogre stuff and exclusive beats.</p>
+                <p class="modal-caption"> PRICE: 15.000 HUF // around 42 EUR // around 49 USD</p>
+            </div>
+
+            <br><hr style="border: 1px solid rgba(255,255,255,0.1); margin: 30px 0;"><br>
+
+            <div class="product-card" id="card-4" role="button" tabindex="0" aria-label="Open TEASBOGRE v1 product modal">
+                <div class="card-preview">
+                    <img src="assets/Front.png" alt="White shirt front preview">
+                    <div class="card-copy">
+                        <h2 class="tag">TEASBOGRE_4ever</h2>
+                        <p>click to inspect the shirt !!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-copy">
+                <p>100% heavyweight cotton (220 g/m²). 1/1 SPECIAL HAND-SPRAYED EDITION. Supply will last until my paint sprayer runs out LOL </p>
+                <p class="modal-caption"> PRICE: 12.500 HUF // around 34 EUR // around 39 USD</p>
+            </div>
+
+        </div>
+
+
+        <div class="page-content merch-page">
+            <h1>MiKMiKO [DEMO] MERCH</h1>
+             <p class="intro">D E M O - D E M O - D E M O - D E M O - D E M O - D E M O - D E M O</p>
+            <!-- PRODUCT MiKO -->
+            <div class="product-card" id="card-M" role="button" tabindex="0" aria-label="Open TEASBOGRE vX product modal">
+                <div class="card-preview">
+                    <img src="assets/Miko-FRONT.png" alt="Product preview">
+                    <div class="card-copy">
+                        <h2 class="tag">MiKMiKO ALBUM MERCH</h2>
+                        <p>click to inspect the shirt !!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-copy">
+                <p>100% heavyweight cotton (220 g/m²).</p>
+                <p class="modal-caption"> PRICE: 12.500 HUF // around 34 EUR // around 39 USD</p>
+            </div>
         </div>
     </main>
 
-    <div class="modal-overlay" id="productModal" aria-hidden="true">
-        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="productTitle">
+    <!-- MODAL V1 -->
+    <div class="modal-overlay" id="modal-v1" aria-hidden="true">
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="productTitleV1">
             <button class="modal-close" aria-label="Close modal">×</button>
             <div class="modal-header">
-                <h2 id="productTitle">TEASBOGRE_v1</h2>
+                <h2 id="productTitleV1">TEASBOGRE_v1</h2>
                 <p>White version loaded by default.</p>
             </div>
             <div class="modal-toggle-group">
@@ -65,15 +122,79 @@
                 <button type="button" class="color-toggle" data-color="black">Black</button>
             </div>
             <div class="modal-images">
-                <img id="frontImage" src="assets/shirt_white_front.png" alt="White shirt front" role="button" tabindex="0" aria-label="Click to zoom front shirt image">
-                <img id="backImage" src="assets/shirt_white_back.png" alt="White shirt back" role="button" tabindex="0" aria-label="Click to zoom back shirt image">
+                <img class="frontImage" src="assets/shirt_white_front.png" alt="White shirt front" role="button" tabindex="0" aria-label="Click to zoom front shirt image">
+                <img class="backImage" src="assets/shirt_white_back.png" alt="White shirt back" role="button" tabindex="0" aria-label="Click to zoom back shirt image">
             </div>
-            <p class="buy-button" href="" target="_blank" rel="noopener noreferrer">SOON!</p>
-            <p class="modal-caption">100% heavyweight cotton (220 g/m²). Includes a custom burned CD-R full of teasbogre stuff and exclusive beats  .</p>
+            <p class="buy-button">SOON!</p>
+            <p class="modal-caption">100% heavyweight cotton (220 g/m²). Includes a custom burned CD-R full of teasbogre stuff and exclusive beats.</p>
             <p class="modal-caption"> PRICE: 15.000 HUF // around 42 EUR // around 49 USD</p>
         </div>
     </div>
 
+    <!-- MODAL V6 -->
+    <div class="modal-overlay" id="modal-v6" aria-hidden="true">
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="productTitleV6">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 id="productTitleV6">TEASBOGRE_v6</h2>
+                <p>White version loaded by default.</p>
+            </div>
+            <div class="modal-toggle-group">
+                <button type="button" class="color-toggle active" data-color="white">White</button>
+                <button type="button" class="color-toggle" data-color="black">Black</button>
+            </div>
+            <div class="modal-images">
+                <img class="frontImage" src="assets/v6_white_front.png" alt="White shirt front" role="button" tabindex="0" aria-label="Click to zoom front shirt image">
+                <img class="backImage" src="assets/v6_white_back.png" alt="White shirt back" role="button" tabindex="0" aria-label="Click to zoom back shirt image">
+            </div>
+            <p class="buy-button">SOON!</p>
+            <p class="modal-caption">100% heavyweight cotton (220 g/m²). Includes a custom burned CD-R full of teasbogre stuff and exclusive beats.</p>
+            <p class="modal-caption"> PRICE: 15.000 HUF // around 42 EUR // around 49 USD</p>
+        </div>
+    </div>
+
+    <!-- MODAL 4ever -->
+    <div class="modal-overlay" id="modal-4" aria-hidden="true">
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="productTitleVX">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 id="productTitleVX">TEASBOGRE_4ever</h2>
+                <p>White version only. (i only have black spray paint)</p>
+            </div>
+            <div class="modal-toggle-group">
+                <button type="button" class="color-toggle active" data-color="white">White</button>
+            </div>
+            <div class="modal-images">
+                <img class="frontImage" src="assets/Front.png" alt="Shirt front" role="button" tabindex="0">
+            </div>
+            <p class="buy-button">SOON!</p>
+            <p class="modal-caption">Basically a 1/1. Every shirt is different. You COMPLETELY trust me with the design. Who knows, maybe you'll have the coolest out of them all !! Supply lasts until my spray paint is out</p>
+            <p class="modal-caption"> PRICE: 12.500 HUF // around 34 EUR // around 39 USD</p>
+        </div>
+    </div>
+
+    <!-- MODAL MiKO -->
+    <div class="modal-overlay" id="modal-M" aria-hidden="true">
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="productTitleVX">
+            <button class="modal-close" aria-label="Close modal">×</button>
+            <div class="modal-header">
+                <h2 id="productTitleVX">MiKO album merch</h2>
+                <p>White version only.</p>
+            </div>
+            <div class="modal-toggle-group">
+                <button type="button" class="color-toggle active" data-color="white">White</button>
+            </div>
+            <div class="modal-images">
+                <img class="frontImage" src="assets/Miko-FRONT.png" alt="Shirt front" role="button" tabindex="0">
+                <img class="backImage" src="assets/Miko-BACK.png" alt="Shirt back" role="button" tabindex="0">
+            </div>
+            <p class="buy-button">SOON!</p>
+            <p class="modal-caption">100% heavyweight cotton (220 g/m²).</p>
+            <p class="modal-caption"> PRICE: 12.500 HUF // around 34 EUR // around 39 USD</p>
+        </div>
+    </div>
+
+    <!-- PHOTO PREVIEW OVERLAY -->
     <div class="photo-overlay" id="photoPreview" aria-hidden="true">
         <div class="photo-panel" role="dialog" aria-modal="true" aria-labelledby="photoPreviewTitle">
             <button class="photo-close" aria-label="Close image preview">×</button>
@@ -83,62 +204,12 @@
     </div>
 
     <script>
-
         document.addEventListener('DOMContentLoaded', () => {
-            const modal = document.getElementById('productModal');
             const photoOverlay = document.getElementById('photoPreview');
             const previewImage = document.getElementById('previewImage');
             const photoClose = document.querySelector('.photo-close');
-            const productCard = document.querySelector('.product-card');
-            const closeBtn = document.querySelector('.modal-close');
-            const toggles = document.querySelectorAll('.color-toggle');
-            const frontImage = document.getElementById('frontImage');
-            const backImage = document.getElementById('backImage');
 
-            const imageSources = {
-                white: {
-                    front: 'assets/shirt_white_front.png',
-                    back: 'assets/shirt_white_back.png',
-                },
-                black: {
-                    front: 'assets/shirt_black_front.png',
-                    back: 'assets/shirt_black_back.png',
-                },
-            };
-
-            const setColor = (color) => {
-                frontImage.src = imageSources[color].front;
-                backImage.src = imageSources[color].back;
-                toggles.forEach((button) => {
-                    button.classList.toggle('active', button.dataset.color === color);
-                });
-            };
-
-            const openModal = () => {
-                modal.classList.add('open');
-                modal.setAttribute('aria-hidden', 'false');
-            };
-
-            const closeModal = () => {
-                modal.classList.remove('open');
-                modal.setAttribute('aria-hidden', 'true');
-            };
-
-            productCard.addEventListener('click', openModal);
-            productCard.addEventListener('keydown', (event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    openModal();
-                }
-            });
-
-            closeBtn.addEventListener('click', closeModal);
-            modal.addEventListener('click', (event) => {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            });
-
+            // Zoom preview funkció mindkét termék képeihez
             const openPreview = (image) => {
                 previewImage.src = image.src;
                 previewImage.alt = image.alt;
@@ -151,36 +222,111 @@
                 photoOverlay.setAttribute('aria-hidden', 'true');
             };
 
-            [frontImage, backImage].forEach((image) => {
-                image.addEventListener('click', () => openPreview(image));
-                image.addEventListener('keydown', (event) => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                        event.preventDefault();
-                        openPreview(image);
-                    }
-                });
-            });
-
             photoClose.addEventListener('click', closePreview);
             photoOverlay.addEventListener('click', (event) => {
-                if (event.target === photoOverlay) {
-                    closePreview();
-                }
+                if (event.target === photoOverlay) closePreview();
             });
 
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape' && photoOverlay.classList.contains('open')) {
-                    closePreview();
-                }
-            });
+            // Termék modál inicializáló függvény
+            function setupProduct(cardId, modalId, imageSources) {
+                const card = document.getElementById(cardId);
+                const modal = document.getElementById(modalId);
+                if (!card || !modal) return;
 
-            toggles.forEach((button) => {
-                button.addEventListener('click', () => {
-                    setColor(button.dataset.color);
+                const closeBtn = modal.querySelector('.modal-close');
+                const toggles = modal.querySelectorAll('.color-toggle');
+                const frontImg = modal.querySelector('.frontImage');
+                const backImg = modal.querySelector('.backImage');
+
+                const setColor = (color) => {
+                    frontImg.src = imageSources[color].front;
+                    backImg.src = imageSources[color].back;
+                    toggles.forEach((button) => {
+                        button.classList.toggle('active', button.dataset.color === color);
+                    });
+                };
+
+                const openModal = () => {
+                    modal.classList.add('open');
+                    modal.setAttribute('aria-hidden', 'false');
+                };
+
+                const closeModal = () => {
+                    modal.classList.remove('open');
+                    modal.setAttribute('aria-hidden', 'true');
+                };
+
+                card.addEventListener('click', openModal);
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openModal();
+                    }
                 });
+
+                closeBtn.addEventListener('click', closeModal);
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) closeModal();
+                });
+
+                [frontImg, backImg].forEach((img) => {
+                    img.addEventListener('click', () => openPreview(img));
+                    img.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            openPreview(img);
+                        }
+                    });
+                });
+
+                toggles.forEach((button) => {
+                    button.addEventListener('click', () => {
+                        setColor(button.dataset.color);
+                    });
+                });
+
+                setColor('white');
+            }
+
+            // V1 beállítása
+            setupProduct('card-v1', 'modal-v1', {
+                white: { front: 'assets/shirt_white_front.png', back: 'assets/shirt_white_back.png' },
+                black: { front: 'assets/shirt_black_front.png', back: 'assets/shirt_black_back.png' }
             });
 
-            setColor('white');
+            // V6 beállítása
+            setupProduct('card-v6', 'modal-v6', {
+                white: { front: 'assets/v6_white_front.png', back: 'assets/v6_white_back.png' },
+                black: { front: 'assets/v6_black_front.png', back: 'assets/v6_black_back.png' }
+            });
+            
+            // MiKO beállítása
+            setupProduct('card-M', 'modal-M', {
+                white: { 
+                    front: 'assets/Miko-FRONT.png', 
+                    back: 'assets/Miko-BACK.png' 
+                },
+            });
+
+            setupProduct('card-4', 'modal-4', {
+                white: { 
+                    front: 'assets/Front.png', 
+                },
+            });
+
+            // Globális ESC billentyű zárás
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    if (photoOverlay.classList.contains('open')) {
+                        closePreview();
+                    } else {
+                        document.querySelectorAll('.modal-overlay.open').forEach(m => {
+                            m.classList.remove('open');
+                            m.setAttribute('aria-hidden', 'true');
+                        });
+                    }
+                }
+            });
         });
     </script>
     <script src="script.js"></script>
