@@ -33,9 +33,16 @@
         </nav>
     </header>
     <main>
+
+        <div class="page-content merch-page">
+            <h1>FONTOS:</h1>
+            <h2>Ha *ESETLEG* nem szeretnéd a CD-t vagy esetleg más merch-höz szeretnéd, kérlek jelezd!</h2>
+            <h2>Lehet velem alkudozni és a legjobbat akarom neked is és nekem is!! <3 </h2>
+        </div>
+
         <div class="page-content merch-page">
             <h1>TEASBOGRE MERCH</h1>
-            <p class="intro">FIRST -- ORIGINAL -- EPIC -- GOTHIC</p>
+            <p class="intro">FIRST -- ORIGINAL -- EPIC</p>
             <p class="intro">uhm yeeah.. teasbogre merch !!! enjoy ^_^</p>
             
             <!-- PRODUCT V1 -->
@@ -124,8 +131,10 @@
             <div class="modal-images">
                 <img class="frontImage" src="assets/shirt_white_front.png" alt="White shirt front" role="button" tabindex="0" aria-label="Click to zoom front shirt image">
                 <img class="backImage" src="assets/shirt_white_back.png" alt="White shirt back" role="button" tabindex="0" aria-label="Click to zoom back shirt image">
+                <img class="cdImage" src="assets/CD OUTSIDE.jpg" alt="CD OUTSIDE" role="button" tabindex="0">
+                <img class="cdImage" src="assets/CD INSIDE.png" alt="CD INSIDE" role="button" tabindex="0">
             </div>
-            <p class="buy-button">SOON!</p>
+            <a class="buy-button" href="https://www.instagram.com/_teasbogre/" target="_blank" rel="noopener noreferrer">Get it now!</a>            
             <p class="modal-caption">100% heavyweight cotton (220 g/m²). Includes a custom burned CD-R full of teasbogre stuff and exclusive beats.</p>
             <p class="modal-caption"> PRICE: 15.000 HUF // around 42 EUR // around 49 USD</p>
         </div>
@@ -146,8 +155,10 @@
             <div class="modal-images">
                 <img class="frontImage" src="assets/v6_white_front.png" alt="White shirt front" role="button" tabindex="0" aria-label="Click to zoom front shirt image">
                 <img class="backImage" src="assets/v6_white_back.png" alt="White shirt back" role="button" tabindex="0" aria-label="Click to zoom back shirt image">
+                <img class="cdImage" src="assets/CD OUTSIDE.jpg" alt="CD OUTSIDE" role="button" tabindex="0">
+                <img class="cdImage" src="assets/CD INSIDE.png" alt="CD INSIDE" role="button" tabindex="0">
             </div>
-            <p class="buy-button">SOON!</p>
+            <a class="buy-button" href="https://www.instagram.com/_teasbogre/" target="_blank" rel="noopener noreferrer">Get it now!</a>            
             <p class="modal-caption">100% heavyweight cotton (220 g/m²). Includes a custom burned CD-R full of teasbogre stuff and exclusive beats.</p>
             <p class="modal-caption"> PRICE: 15.000 HUF // around 42 EUR // around 49 USD</p>
         </div>
@@ -167,7 +178,7 @@
             <div class="modal-images">
                 <img class="frontImage" src="assets/Front.png" alt="Shirt front" role="button" tabindex="0">
             </div>
-            <p class="buy-button">SOON!</p>
+            <a class="buy-button" href="https://www.instagram.com/_teasbogre/" target="_blank" rel="noopener noreferrer">Get it now!</a>            
             <p class="modal-caption">Basically a 1/1. Every shirt is different. You COMPLETELY trust me with the design. Who knows, maybe you'll have the coolest out of them all !! Supply lasts until my spray paint is out</p>
             <p class="modal-caption"> PRICE: 12.500 HUF // around 34 EUR // around 39 USD</p>
         </div>
@@ -188,7 +199,7 @@
                 <img class="frontImage" src="assets/Miko-FRONT.png" alt="Shirt front" role="button" tabindex="0">
                 <img class="backImage" src="assets/Miko-BACK.png" alt="Shirt back" role="button" tabindex="0">
             </div>
-            <p class="buy-button">SOON!</p>
+            <a class="buy-button" href="https://www.instagram.com/_teasbogre/" target="_blank" rel="noopener noreferrer">Get it now!</a>            
             <p class="modal-caption">100% heavyweight cotton (220 g/m²).</p>
             <p class="modal-caption"> PRICE: 12.500 HUF // around 34 EUR // around 39 USD</p>
         </div>
@@ -202,6 +213,9 @@
             <p id="photoPreviewTitle" class="photo-caption">Click outside or press Esc to close</p>
         </div>
     </div>
+
+    
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -222,10 +236,12 @@
                 photoOverlay.setAttribute('aria-hidden', 'true');
             };
 
-            photoClose.addEventListener('click', closePreview);
-            photoOverlay.addEventListener('click', (event) => {
-                if (event.target === photoOverlay) closePreview();
-            });
+            if (photoClose) photoClose.addEventListener('click', closePreview);
+            if (photoOverlay) {
+                photoOverlay.addEventListener('click', (event) => {
+                    if (event.target === photoOverlay) closePreview();
+                });
+            }
 
             // Termék modál inicializáló függvény
             function setupProduct(cardId, modalId, imageSources) {
@@ -239,8 +255,12 @@
                 const backImg = modal.querySelector('.backImage');
 
                 const setColor = (color) => {
-                    frontImg.src = imageSources[color].front;
-                    backImg.src = imageSources[color].back;
+                    if (frontImg && imageSources[color]?.front) {
+                        frontImg.src = imageSources[color].front;
+                    }
+                    if (backImg && imageSources[color]?.back) {
+                        backImg.src = imageSources[color].back;
+                    }
                     toggles.forEach((button) => {
                         button.classList.toggle('active', button.dataset.color === color);
                     });
@@ -264,12 +284,13 @@
                     }
                 });
 
-                closeBtn.addEventListener('click', closeModal);
+                if (closeBtn) closeBtn.addEventListener('click', closeModal);
                 modal.addEventListener('click', (e) => {
                     if (e.target === modal) closeModal();
                 });
 
-                [frontImg, backImg].forEach((img) => {
+                // A modálban található ÖSSZES képre (pólók + CD-k) rárakjuk a nagyítást
+                modal.querySelectorAll('.modal-images img').forEach((img) => {
                     img.addEventListener('click', () => openPreview(img));
                     img.addEventListener('keydown', (e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
@@ -308,6 +329,7 @@
                 },
             });
 
+            // 4ever beállítása
             setupProduct('card-4', 'modal-4', {
                 white: { 
                     front: 'assets/Front.png', 
@@ -317,7 +339,7 @@
             // Globális ESC billentyű zárás
             document.addEventListener('keydown', (event) => {
                 if (event.key === 'Escape') {
-                    if (photoOverlay.classList.contains('open')) {
+                    if (photoOverlay && photoOverlay.classList.contains('open')) {
                         closePreview();
                     } else {
                         document.querySelectorAll('.modal-overlay.open').forEach(m => {
