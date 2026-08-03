@@ -34,19 +34,10 @@
     </header>
     <main>
 
-        <div class="page-content merch-page">
-            <h1>FONTOS:</h1>
-            <h2>Ha *ESETLEG* nem szeretnéd a CD-t vagy esetleg más merch-höz szeretnéd, kérlek jelezd!</h2>
-            <h2>Lehet velem alkudozni és a legjobbat akarom neked is és nekem is!! <3 </h2>
-            <h3> bármi kérdésed van, esetleg kérés, fordulj hozzám instagramon: @_teasbogre!</h3>
-        </div>
-
-        <div class="page-content merch-page">
-            <h2>Hogyan tudsz rendelni?</h2>
-            <h3>1. Válaszd ki a dizájnt és a méretet, majd dobj egy üzenetet instagramon (@_teasbogre)!</h3>
-            <h3>2. Elküldöm az utaláshoz szükséges adatokat.</h3>
-            <h3>3. Amint átjött a pénz, már intézem is a gyártást és a postázást.</h3>
-        </div>
+        <!-- Info gomb -->
+        <button type="button" id="infoBtn" class="buy-button" style="margin: 15px auto; display: block; max-width: 280px; cursor: pointer;">
+            Hogyan működik a vásárlás?
+        </button>
 
         <div class="page-content merch-page">
             <h1>TEASBOGRE MERCH</h1>
@@ -123,6 +114,29 @@
             </div>
         </div>
     </main>
+
+    <!-- INFO MODAL -->
+        <div class="modal-overlay" id="modal-info" aria-hidden="true">
+            <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="infoTitle">
+                <button class="modal-close" id="infoCloseBtn" aria-label="Close modal">×</button>
+                <div class="modal-header">
+                    <h2 id="infoTitle">Hogyan tudsz rendelni?</h2>
+                </div>
+                
+                <div class="modal-caption" style="text-align: left; line-height: 1.6; margin-top: 15px;">
+                    <p style="font-weight: bold; font-size: 1.1em;">1. Válaszd ki a dizájnt és a méretet, majd dobj egy üzenetet instagramon (<a href="https://www.instagram.com/_teasbogre/" target="_blank" style="color: inherit; text-decoration: underline;">@_teasbogre</a>)!</p>
+                    <p style="font-weight: bold; font-size: 1.1em; margin-top: 10px;">2. Elküldöm az utaláshoz szükséges adatokat.</p>
+                    <p style="font-weight: bold; font-size: 1.1em; margin-top: 10px;">3. Amint átjött a pénz, már intézem is a gyártást és a postázást.</p>
+                    
+                    <hr style="border: 1px solid rgba(255,255,255,0.2); margin: 20px 0;">
+                    
+                    <h3 style="margin-bottom: 8px;">FONTOS:</h3>
+                    <p>• Ha <em>ESETLEG</em> nem szeretnéd a CD-t vagy esetleg más merch-höz szeretnéd, kérlek jelezd!</p>
+                    <p style="margin-top: 6px;">• Lehet velem alkudozni és a legjobbat akarom neked is és nekem is!! &lt;3</p>
+                    <p style="margin-top: 6px;">• Bármi kérdésed van, esetleg kérés, fordulj hozzám instagramon!</p>
+                </div>
+            </div>
+        </div>
 
     <!-- MODAL V1 -->
     <div class="modal-overlay" id="modal-v1" aria-hidden="true">
@@ -315,6 +329,30 @@
                 });
 
                 setColor('white');
+            }
+
+            // INFO MODAL MANAGEMENT
+            const infoBtn = document.getElementById('infoBtn');
+            const infoModal = document.getElementById('modal-info');
+            const infoCloseBtn = document.getElementById('infoCloseBtn');
+
+            if (infoBtn && infoModal) {
+                const openInfoModal = () => {
+                    infoModal.classList.add('open');
+                    infoModal.setAttribute('aria-hidden', 'false');
+                };
+
+                const closeInfoModal = () => {
+                    infoModal.classList.remove('open');
+                    infoModal.setAttribute('aria-hidden', 'true');
+                };
+
+                infoBtn.addEventListener('click', openInfoModal);
+                if (infoCloseBtn) infoCloseBtn.addEventListener('click', closeInfoModal);
+                
+                infoModal.addEventListener('click', (e) => {
+                    if (e.target === infoModal) closeInfoModal();
+                });
             }
 
             // V1 beállítása
